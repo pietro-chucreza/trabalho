@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff7fc">
+    <meta name="description" content="Power: um projeto escolar sobre tecnologia e segurança feminina.">
+    <title>Power | Segurança e cuidado</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="notice-bar">Projeto escolar demonstrativo · Nenhum alerta ou localização é enviado de verdade</div>
+    <header class="site-header" id="topo">
+        <a class="brand" href="#inicio" aria-label="Power, página inicial"><span class="brand-icon">✦</span> power<span class="brand-dot">.</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰ <span class="sr-only">Abrir menu</span></button>
+        <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#demonstracao">Demonstração</a>
+            <a href="#dicas">Dicas</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#gestao">Gestão</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ativar modo escuro">☾ <span>Modo escuro</span></button>
+    </header>
+
+    <main>
+        <section class="hero section-wrap" id="inicio">
+            <div class="hero-copy">
+                <span class="eyebrow">CUIDADO, TECNOLOGIA E CONFIANÇA</span>
+                <h1>Mais segurança para seguir <span>o seu caminho.</span></h1>
+                <p>O Power é uma ideia de aplicativo que reúne recursos de apoio e informação para mulheres. Um projeto escolar feito para pensar em cuidado no dia a dia.</p>
+                <div class="button-row">
+                    <a class="button button-primary" href="#sobre">Conhecer o projeto <span>→</span></a>
+                    <a class="button button-light" href="#demonstracao">Testar o aplicativo</a>
+                </div>
+                <p class="small-note">Uma demonstração fictícia: não substitui os serviços de emergência.</p>
+            </div>
+            <div class="hero-art" aria-label="Ilustração de uma tela de celular com o aplicativo Power">
+                <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>
+                <div class="phone">
+                    <div class="phone-top"><span>9:41</span><span>●●● ▰</span></div>
+                    <div class="phone-content">
+                        <div class="phone-brand"><span class="brand-icon">✦</span> power</div>
+                        <p class="phone-greeting">Oi, Ana! <span>♡</span></p>
+                        <p class="phone-subtitle">Como podemos ajudar?</p>
+                        <div class="phone-sos">SOS <span>Toque para pedir ajuda</span></div>
+                        <div class="phone-mini-row"><span>⌖</span><div>Localização <small>Compartilhamento simulado</small></div></div>
+                        <div class="phone-mini-row"><span>♡</span><div>Pessoas de confiança <small>Seus contatos importantes</small></div></div>
+                    </div>
+                    <div class="phone-home"></div>
+                </div>
+                <div class="floating-note"><span>♡</span> Informação também é cuidado.</div>
+            </div>
+        </section>
+
+        <section class="importance section-wrap">
+            <div class="importance-icon">♡</div>
+            <div><span class="eyebrow">POR QUE FALAR SOBRE ISSO?</span><h2>Segurança é um direito de todas.</h2><p>Muitas mulheres mudam seus caminhos ou sua rotina por medo. Informação, apoio e acesso a pessoas de confiança podem ajudar. O Power quer incentivar essa conversa e apresentar uma ideia de apoio pela tecnologia.</p></div>
+        </section>
+
+        <section class="section-wrap section-block" id="demonstracao">
+            <div class="section-heading centered"><span class="eyebrow">EXPERIMENTE POR AQUI</span><h2>Uma demonstração do Power</h2><p>Teste as funções abaixo. Elas acontecem somente nesta página e não acionam serviços reais.</p></div>
+            <div class="demo-grid">
+                <div class="demo-card sos-card">
+                    <div class="card-icon pink-icon">♡</div><h3>Pedido de ajuda (SOS)</h3>
+                    <p>Inicie uma contagem de 5 segundos. No fim, você verá uma confirmação de demonstração.</p>
+                    <button class="button button-danger" id="sosButton">Iniciar SOS de demonstração</button>
+                    <button class="button button-outline hidden" id="cancelSos">Cancelar contagem</button>
+                    <p class="countdown" id="countdown" aria-live="polite"></p>
+                </div>
+                <div class="demo-card">
+                    <div class="card-icon purple-icon">⌖</div><h3>Compartilhar localização</h3>
+                    <p>Simule o compartilhamento com seus contatos de confiança. Nenhum dado de localização é acessado.</p>
+                    <button class="button button-light" id="locationButton">Simular localização</button>
+                </div>
+                <div class="demo-card">
+                    <div class="card-icon lilac-icon">✦</div><h3>Modo de proteção</h3>
+                    <p>Ative ou desative o indicador de proteção para ver o status mudar.</p>
+                    <button class="button button-light" id="protectionButton" aria-pressed="false">Ativar proteção</button>
+                </div>
+                <div class="demo-card status-card">
+                    <div class="status-heading"><div class="card-icon green-icon">✓</div><span class="status-pill" id="statusPill">Tudo tranquilo</span></div>
+                    <h3>Status do aplicativo</h3><p id="statusText">Modo de proteção desativado. Esta é apenas uma simulação local.</p>
+                    <div class="status-line"><span>Proteção</span><strong id="protectionStatus">Desativada</strong></div>
+                    <div class="status-line"><span>Localização</span><strong id="locationStatus">Não compartilhada</strong></div>
+                </div>
+            </div>
+            <div class="safety-disclaimer">⚠️ <span><strong>Importante:</strong> este protótipo não envia alertas, não rastreia pessoas e não substitui a ajuda profissional ou os serviços de emergência.</span></div>
+        </section>
+
+        <section class="soft-section">
+            <div class="section-wrap section-block" id="conta">
+                <div class="section-heading"><span class="eyebrow">SEU ESPAÇO DE TESTE</span><h2>Cadastro e acesso</h2><p>Crie uma conta fictícia para testar a experiência. Os dados ficam somente neste navegador.</p></div>
+                <div class="account-layout">
+                    <div class="account-card">
+                        <div class="tab-row"><button class="account-tab active" data-tab="registerPanel">Criar conta</button><button class="account-tab" data-tab="loginPanel">Entrar</button></div>
+                        <form id="registerPanel" class="account-form">
+                            <label>Nome completo<input type="text" name="name" autocomplete="name" required minlength="3" maxlength="70" placeholder="Como podemos te chamar?"></label>
+                            <label>E-mail<input type="email" name="email" autocomplete="email" required maxlength="120" placeholder="voce@email.com"></label>
+                            <label>Senha<input type="password" name="password" autocomplete="new-password" required minlength="6" maxlength="64" placeholder="Pelo menos 6 caracteres"></label>
+                            <label>Confirme sua senha<input type="password" name="confirmPassword" autocomplete="new-password" required minlength="6" maxlength="64" placeholder="Digite novamente"></label>
+                            <button class="button button-primary full-button" type="submit">Cadastrar</button>
+                        </form>
+                        <form id="loginPanel" class="account-form hidden">
+                            <label>E-mail<input type="email" name="email" autocomplete="email" required maxlength="120" placeholder="voce@email.com"></label>
+                            <label>Senha<input type="password" name="password" autocomplete="current-password" required minlength="6" maxlength="64" placeholder="Sua senha de demonstração"></label>
+                            <button class="button button-primary full-button" type="submit">Entrar</button>
+                        </form>
+                        <p class="form-message" id="accountMessage" aria-live="polite"></p>
+                        <div class="logged-in hidden" id="loggedIn"><span id="welcomeUser"></span><button class="button button-outline" id="logoutButton">Sair da conta</button></div>
+                        <p class="tiny-note">Não use uma senha real. Este projeto escolar não tem servidor e não é indicado para guardar informações pessoais.</p>
+                    </div>
+                    <div class="account-side"><span class="side-heart">♡</span><h3>Um projeto para aprender fazendo</h3><p>As informações são salvas localmente para esta demonstração. Ao limpar os dados do navegador, elas serão removidas.</p><div class="side-check">✓ Sem cadastro em serviços externos</div><div class="side-check">✓ Sem envio de dados pela internet</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap section-block" id="contatos">
+            <div class="section-heading"><span class="eyebrow">REDE DE APOIO</span><h2>Contatos de confiança</h2><p>Guarde até cinco contatos fictícios ou de teste neste navegador.</p></div>
+            <div class="contacts-layout">
+                <form class="contact-form" id="contactForm">
+                    <label>Nome<input type="text" name="contactName" required maxlength="60" placeholder="Nome da pessoa"></label>
+                    <label>Telefone<input type="tel" name="contactPhone" required maxlength="20" placeholder="(00) 00000-0000"></label>
+                    <button class="button button-primary full-button" id="addContactButton" type="submit">Adicionar contato</button>
+                    <p class="form-message" id="contactMessage" aria-live="polite"></p>
+                </form>
+                <div class="contact-list-wrap"><div class="list-title"><h3>Minha lista</h3><span id="contactCount">0/5</span></div><ul class="contact-list" id="contactList"></ul><p class="empty-message" id="emptyContacts">Seus contatos adicionados aparecerão aqui.</p></div>
+            </div>
+        </section>
+
+        <section class="soft-section" id="dicas">
+            <div class="section-wrap section-block">
+                <div class="section-heading centered"><span class="eyebrow">INFORMAÇÃO QUE PODE AJUDAR</span><h2>Dicas de Segurança</h2><p>Ideias simples para pensar no cuidado em diferentes situações.</p></div>
+                <div class="tips-grid">
+                    <article class="tip-card"><div class="card-icon pink-icon">↗</div><h3>Ao andar sozinha</h3><p>Prefira locais iluminados e movimentados. Se puder, avise alguém de confiança sobre o caminho que pretende fazer.</p></article>
+                    <article class="tip-card"><div class="card-icon purple-icon">▣</div><h3>No transporte público</h3><p>Confira o trajeto antes de sair e fique atenta ao seu entorno. Se algo te deixar desconfortável, procure um funcionário ou local movimentado.</p></article>
+                    <article class="tip-card"><div class="card-icon lilac-icon">⌖</div><h3>Compartilhe seu trajeto</h3><p>Combine com alguém de confiança de avisar quando chegar. Compartilhe informações apenas com pessoas em quem confia.</p></article>
+                    <article class="tip-card"><div class="card-icon pink-icon">♡</div><h3>Em encontros</h3><p>Prefira um lugar público e conte a alguém de confiança onde estará. Você pode ir embora ou pedir ajuda sempre que quiser.</p></article>
+                    <article class="tip-card"><div class="card-icon purple-icon">!</div><h3>Se precisar de ajuda</h3><p>Procure um lugar seguro e peça apoio a alguém próximo. Em uma emergência, ligue para os serviços oficiais.</p></article>
+                    <article class="tip-card quote-tip"><span>“</span><p>Você merece se sentir segura e respeitada em todos os espaços.</p><small>Uma mensagem do projeto Power</small></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap section-block" id="numeros">
+            <div class="section-heading centered"><span class="eyebrow">SALVE ESTAS INFORMAÇÕES</span><h2>Números importantes</h2><p>Em uma emergência real, use os canais oficiais. Os botões abaixo só mostram informações na página.</p></div>
+            <div class="numbers-grid">
+                <article class="number-card"><span class="number-icon">🚓</span><div><h3>190</h3><p>Polícia Militar</p></div><button class="number-button" data-number-info="190 — Polícia Militar">Ver número</button></article>
+                <article class="number-card"><span class="number-icon">🚑</span><div><h3>192</h3><p>SAMU</p></div><button class="number-button" data-number-info="192 — SAMU">Ver número</button></article>
+                <article class="number-card"><span class="number-icon">🚒</span><div><h3>193</h3><p>Bombeiros</p></div><button class="number-button" data-number-info="193 — Bombeiros">Ver número</button></article>
+                <article class="number-card"><span class="number-icon">☎</span><div><h3>180</h3><p>Central de Atendimento à Mulher</p></div><button class="number-button" data-number-info="180 — Central de Atendimento à Mulher">Ver número</button></article>
+            </div>
+        </section>
+
+        <section class="soft-section" id="sobre">
+            <div class="section-wrap section-block about-layout">
+                <div class="about-art"><div class="about-circle">♡</div><div class="about-sticker">Uma ideia<br>que acolhe</div><span class="about-spark">✦</span></div>
+                <div class="about-copy"><span class="eyebrow">CONHEÇA A IDEIA</span><h2>Sobre o Power</h2>
+                    <p>O Power é um projeto escolar que imaginei para falar sobre a segurança das mulheres e como a tecnologia pode ser usada como apoio. A proposta é reunir informações, contatos importantes e ferramentas de demonstração em um só lugar.</p>
+                    <p>O problema que queremos destacar é o medo e a falta de informação que muitas mulheres enfrentam na rotina. O projeto foi pensado para mulheres que gostariam de encontrar dicas e recursos de apoio com facilidade.</p>
+                    <p>Uma ferramenta assim poderia ajudar a organizar contatos e divulgar informações úteis. Ela não resolveria todos os problemas, mas pode incentivar conversas sobre prevenção, respeito e confiança.</p>
+                    <div class="about-highlight"><strong>Este é um protótipo para fins escolares.</strong> Para funcionar de verdade, um aplicativo precisaria de testes, cuidados com privacidade e apoio de profissionais.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap section-block" id="gestao">
+            <div class="section-heading centered"><span class="eyebrow">UM OLHAR DE ADMINISTRAÇÃO</span><h2>Gestão do Power</h2><p>Organizar a ideia ajuda a entender para quem o projeto serve e como pode evoluir.</p></div>
+            <div class="management-grid">
+                <article class="management-card"><span>🎯</span><h3>Missão</h3><p>Ajudar mulheres a terem mais segurança no dia a dia, oferecendo informação e uma ideia de apoio.</p></article>
+                <article class="management-card"><span>🔭</span><h3>Visão</h3><p>Ser uma ideia de aplicativo que possa contribuir para a proteção feminina.</p></article>
+                <article class="management-card"><span>💜</span><h3>Valores</h3><p>Respeito, segurança, responsabilidade e confiança.</p></article>
+                <article class="management-card"><span>👥</span><h3>Público-alvo</h3><p>Mulheres que desejam mais segurança e acesso fácil a informações de apoio.</p></article>
+            </div>
+            <h3 class="subsection-title">Análise SWOT</h3>
+            <div class="swot-grid">
+                <article class="swot-card swot-strength"><span>FORÇAS</span><h3>O que temos de bom</h3><p>Uma proposta simples, com informações e contatos importantes em um só lugar.</p></article>
+                <article class="swot-card swot-weakness"><span>FRAQUEZAS</span><h3>O que falta melhorar</h3><p>É apenas um protótipo escolar e não envia alertas nem tem equipe de atendimento.</p></article>
+                <article class="swot-card swot-opportunity"><span>OPORTUNIDADES</span><h3>O que pode crescer</h3><p>Parcerias com escolas e especialistas poderiam trazer orientação e melhorias.</p></article>
+                <article class="swot-card swot-threat"><span>AMEAÇAS</span><h3>O que exige cuidado</h3><p>Privacidade, informações incorretas e a falsa impressão de que o app substitui ajuda real.</p></article>
+            </div>
+            <div class="planning-box"><div><span class="eyebrow">PRÓXIMOS PASSOS</span><h3>Objetivos e planejamento</h3><p>O objetivo é apresentar soluções tecnológicas de apoio à segurança. Para desenvolver a ideia, seria preciso:</p></div><ol class="plan-list"><li><span>1</span> Pesquisar necessidades e ouvir o público.</li><li><span>2</span> Planejar recursos e proteger os dados.</li><li><span>3</span> Criar um protótipo e testar com cuidado.</li><li><span>4</span> Avaliar resultados e fazer melhorias.</li></ol></div>
+        </section>
+
+        <section class="soft-section">
+            <div class="section-wrap section-block">
+                <div class="section-heading centered"><span class="eyebrow">DÚVIDAS COMUNS</span><h2>Perguntas frequentes</h2></div>
+                <div class="faq-list">
+                    <details><summary>O botão SOS chama a polícia?</summary><p>Não. A contagem é apenas uma simulação visual e não envia nenhum pedido de ajuda.</p></details>
+                    <details><summary>O Power rastreia minha localização?</summary><p>Não. O botão de localização muda apenas o status mostrado na tela. Nenhuma localização é acessada.</p></details>
+                    <details><summary>Meus dados são enviados para alguém?</summary><p>Não. As informações de demonstração ficam no armazenamento local deste navegador e não são enviadas a um servidor.</p></details>
+                    <details><summary>Este protótipo substitui os serviços de emergência?</summary><p>Não. Em uma situação real de emergência, procure ajuda e contate os serviços oficiais pelos números informados.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap section-block feedback-layout" id="sugestoes">
+            <div><span class="eyebrow">SUA OPINIÃO IMPORTA</span><h2>Ajude a melhorar a ideia</h2><p>Escreva uma sugestão para o projeto. Ela ficará salva apenas neste navegador.</p>
+                <form id="feedbackForm" class="feedback-form"><label for="feedbackText">Sua sugestão</label><textarea id="feedbackText" name="feedback" required minlength="5" maxlength="500" rows="4" placeholder="O que você gostaria de ver no Power?"></textarea><div class="feedback-bottom"><small id="characterCount">0/500</small><button class="button button-primary" type="submit">Enviar sugestão</button></div><p class="form-message" id="feedbackMessage" aria-live="polite"></p></form>
+            </div>
+            <div class="feedback-card"><span>✎</span><h3>Ideias fazem a diferença</h3><p>Um bom projeto começa entendendo as pessoas para quem ele foi pensado.</p><div id="feedbackSaved" class="feedback-saved"></div></div>
+        </section>
+
+        <section class="quiz-section">
+            <div class="section-wrap section-block quiz-layout">
+                <div class="quiz-intro"><span class="eyebrow">APRENDA E RELEMBRE</span><h2>Quiz de segurança</h2><p>Responda às perguntas e veja quantas acertou. É só uma atividade educativa.</p><div class="quiz-badge">♡ <span>3 perguntas rápidas</span></div></div>
+                <form id="quizForm" class="quiz-card">
+                    <fieldset><legend>1. O que pode ser útil antes de sair para um encontro?</legend><label><input type="radio" name="q1" value="a" required> Contar a uma pessoa de confiança onde você estará</label><label><input type="radio" name="q1" value="b"> Não avisar ninguém</label></fieldset>
+                    <fieldset><legend>2. O que fazer se você se sentir em risco?</legend><label><input type="radio" name="q2" value="a" required> Ignorar o que está sentindo</label><label><input type="radio" name="q2" value="b"> Procurar um lugar seguro e pedir ajuda</label></fieldset>
+                    <fieldset><legend>3. O SOS deste site envia um alerta real?</legend><label><input type="radio" name="q3" value="a" required> Sim, para os serviços de emergência</label><label><input type="radio" name="q3" value="b"> Não, é somente uma demonstração</label></fieldset>
+                    <button class="button button-primary full-button" type="submit">Ver minha pontuação</button>
+                    <p class="quiz-result" id="quizResult" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-wrap footer-main">
+            <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-icon">✦</span> power<span class="brand-dot">.</span></a><p>Uma ideia de cuidado e tecnologia para a segurança feminina.</p><span class="school-label">Projeto demonstrativo escolar</span></div>
+            <div class="footer-links"><h3>Explore</h3><a href="#demonstracao">Demonstração</a><a href="#dicas">Dicas de Segurança</a><a href="#numeros">Números importantes</a><a href="#sobre">Sobre o Power</a></div>
+            <div class="footer-links"><h3>Projeto</h3><a href="#gestao">Gestão do Power</a><a href="#sugestoes">Deixe uma sugestão</a><a href="#conta">Área de cadastro</a></div>
+        </div>
+        <div class="footer-bottom"><div class="section-wrap">Feito com carinho como projeto de conclusão escolar. Power não é um serviço de emergência.</div></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+</body>
+</html>
